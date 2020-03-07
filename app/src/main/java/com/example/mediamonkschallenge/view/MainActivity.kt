@@ -1,7 +1,8 @@
-package com.example.mediamonkschallenge
+package com.example.mediamonkschallenge.view
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.example.mediamonkschallenge.R
 
 class MainActivity : AppCompatActivity() {
 
