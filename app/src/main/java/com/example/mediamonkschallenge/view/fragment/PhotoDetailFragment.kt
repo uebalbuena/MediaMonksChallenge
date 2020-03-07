@@ -1,4 +1,4 @@
-package com.example.mediamonkschallenge.view
+package com.example.mediamonkschallenge.view.fragment
 
 
 import android.os.Bundle

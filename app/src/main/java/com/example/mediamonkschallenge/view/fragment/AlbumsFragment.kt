@@ -1,4 +1,4 @@
-package com.example.mediamonkschallenge.view
+package com.example.mediamonkschallenge.view.fragment
 
 import androidx.lifecycle.ViewModelProviders
 import android.os.Bundle
