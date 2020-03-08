@@ -7,9 +7,34 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".view.fragment.AlbumsFragment">
 
-    <TextView
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerAlbums"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="Hello" />
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatImageButton
+        android:id="@+id/buttonAlbum"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:src="@drawable/ic_photo_library"
+        android:background="#eaeaea"
+        android:foreground="?attr/selectableItemBackground"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/buttonPhoto"/>
+
+    <androidx.appcompat.widget.AppCompatImageButton
+        android:id="@+id/buttonPhoto"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:src="@drawable/ic_photo"
+        android:background="#777777"
+        android:foreground="?attr/selectableItemBackground"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/buttonAlbum"/>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
