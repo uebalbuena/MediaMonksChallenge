@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#000000"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".view.fragment.PhotosFragment">
 
@@ -11,8 +12,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Photos"
-        android:textSize="25sp"
-        android:layout_marginTop="10dp"
+        android:textSize="35sp"
+        android:textColor="#ffffff"
+        android:layout_marginTop="15dp"
         android:gravity="center_vertical"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
