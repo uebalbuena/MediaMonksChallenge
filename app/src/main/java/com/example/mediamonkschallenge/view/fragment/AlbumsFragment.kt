@@ -41,8 +41,8 @@ class AlbumsFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         getAlbums()
 
-        buttonAlbum.setOnClickListener(View.OnClickListener {
-            buttonAlbum.findNavController().navigate(R.id.action_albumsFragment_to_photosFragment)
+        buttonPhoto.setOnClickListener(View.OnClickListener {
+            buttonPhoto.findNavController().navigate(R.id.action_albumsFragment_to_photosFragment)
         })
 
     }
