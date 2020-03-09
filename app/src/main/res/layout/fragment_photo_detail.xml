@@ -7,6 +7,29 @@
     android:background="#000000"
     tools:context=".view.fragment.PhotoDetailFragment">
 
+    <ImageView
+        android:id="@+id/backButton"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:src="@drawable/ic_back"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/photoDetail"
+        app:layout_constraintBottom_toBottomOf="@id/photoDetail"
+        android:layout_margin="15dp"/>
+
+    <TextView
+        android:id="@+id/photoDetail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:text="Photo Detail"
+        android:textSize="35sp"
+        android:textColor="#ffffff"
+        android:layout_marginTop="15dp"
+        android:gravity="center_vertical"/>
+
     <TextView
         android:id="@+id/titleDetail"
         android:layout_width="0dp"
@@ -37,7 +60,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.15" />
+        app:layout_constraintGuide_percent="0.25" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

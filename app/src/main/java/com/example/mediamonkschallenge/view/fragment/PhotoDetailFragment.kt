@@ -8,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import androidx.fragment.app.activityViewModels
+import androidx.navigation.fragment.findNavController
 
 import com.example.mediamonkschallenge.R
 import com.example.mediamonkschallenge.viewModel.PhotosViewModel
@@ -34,6 +35,11 @@ class PhotoDetailFragment : Fragment() {
 
         titleDetail.text = viewModel.title.value
         imageDetail.setImageUrl(viewModel.image.value)
+
+        backButton.setOnClickListener(View.OnClickListener {
+            findNavController().navigate(R.id.action_photoDetailFragment_to_photosFragment)
+        })
+
     }
 
         fun ImageView.setImageUrl(url: String?) {
