@@ -55,6 +55,7 @@ class AlbumsFragment : Fragment() {
     fun getAlbums(){
         albumsViewModel!!.getAlbums().observe(this, Observer <List<Albums>> { albumsList ->
             prepareRecyclerView(albumsList)
+            progressAlbum.visibility = View.GONE
         })
     }
 

@@ -35,10 +35,6 @@ class PhotosFragment : Fragment(), PhotosAdapter.OnPhotosClickListener{
         findNavController().navigate(R.id.action_photosFragment_to_photoDetailFragment)
     }
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-    }
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -63,6 +59,7 @@ class PhotosFragment : Fragment(), PhotosAdapter.OnPhotosClickListener{
     fun getPhotos() {
         photosViewModel!!.getPhotos().observe(this, Observer <List<Photos>> { photoList ->
             prepareRecyclerView(photoList)
+            progressPhoto.visibility = View.GONE
         })
     }
 

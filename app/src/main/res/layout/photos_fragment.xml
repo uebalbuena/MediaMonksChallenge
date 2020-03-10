@@ -29,6 +29,15 @@
         app:layout_constraintTop_toBottomOf="@id/text"
         app:layout_constraintBottom_toTopOf="@id/buttonPhoto"/>
 
+    <ProgressBar
+        android:id="@+id/progressPhoto"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/text"
+        app:layout_constraintBottom_toTopOf="@id/buttonPhoto"/>
+
     <androidx.appcompat.widget.AppCompatImageButton
         android:id="@+id/buttonAlbum"
         android:layout_width="0dp"
