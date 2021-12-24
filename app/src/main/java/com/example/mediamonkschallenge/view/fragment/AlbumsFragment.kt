@@ -17,11 +17,11 @@ import com.example.mediamonkschallenge.model.Albums
 import com.example.mediamonkschallenge.view.adapter.AlbumsAdapter
 import com.example.mediamonkschallenge.viewModel.AlbumsViewModel
 
-class AlbumsFragment <T> : Fragment() {
+class AlbumsFragment : Fragment() {
 
     private val albumsViewModel : AlbumsViewModel by activityViewModels()
     private lateinit var albumsBinding: AlbumsFragmentBinding
-    var albumsAdapter : AlbumsAdapter? = null
+    private var albumsAdapter : AlbumsAdapter? = null
     private var mContext : Context? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -39,9 +39,9 @@ class AlbumsFragment <T> : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        albumsBinding.buttonPhoto.setOnClickListener(View.OnClickListener {
+        albumsBinding.buttonPhoto.setOnClickListener{
             albumsBinding.buttonPhoto.findNavController().navigate(R.id.action_albumsFragment_to_photosFragment)
-        })
+        }
         getAlbums()
     }
 

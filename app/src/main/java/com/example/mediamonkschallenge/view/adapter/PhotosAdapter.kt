@@ -50,7 +50,7 @@ class PhotosAdapter (private val list: List<Photos>, private val clickListener: 
         }
 
 
-        fun ImageView.setImageUrl(url: String?) {
+        private fun ImageView.setImageUrl(url: String?) {
             Picasso.get()
                 .load(url)
                 .placeholder(R.drawable.ic_loading)

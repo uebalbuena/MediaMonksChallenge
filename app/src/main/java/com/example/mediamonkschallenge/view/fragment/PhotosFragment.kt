@@ -18,7 +18,7 @@ import com.example.mediamonkschallenge.model.Photos
 import com.example.mediamonkschallenge.view.adapter.PhotosAdapter
 import com.example.mediamonkschallenge.viewModel.PhotosViewModel
 
-class PhotosFragment<T> : Fragment(), PhotosAdapter.OnPhotosClickListener{
+class PhotosFragment : Fragment(), PhotosAdapter.OnPhotosClickListener{
 
     private val photosViewModel : PhotosViewModel by activityViewModels()
     private lateinit var photosBinding: PhotosFragmentBinding
@@ -37,9 +37,9 @@ class PhotosFragment<T> : Fragment(), PhotosAdapter.OnPhotosClickListener{
         super.onViewCreated(view, savedInstanceState)
         getPhotos()
 
-        photosBinding.buttonAlbum.setOnClickListener(View.OnClickListener {
+        photosBinding.buttonAlbum.setOnClickListener{
             photosBinding.buttonAlbum.findNavController().navigate(R.id.action_photosFragment_to_albumsFragment)
-        })
+        }
     }
 
     override fun onPhotoClick(image: String, title: String) {
