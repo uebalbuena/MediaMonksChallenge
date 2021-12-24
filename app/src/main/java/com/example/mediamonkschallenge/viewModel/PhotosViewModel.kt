@@ -14,7 +14,6 @@ import retrofit2.converter.gson.GsonConverterFactory
 class PhotosViewModel : ViewModel() {
 
     var image = MutableLiveData<String>()
-
     var title = MutableLiveData<String>()
 
     private var photoList : MutableLiveData<List<Photos>>? = null
@@ -24,11 +23,10 @@ class PhotosViewModel : ViewModel() {
             photoList = MutableLiveData <List<Photos>>()
             loadPhotoList()
         }
-
         return photoList as MutableLiveData <List<Photos>>
     }
 
-    fun loadPhotoList() {
+    private fun loadPhotoList() {
 
         val retrofit = Retrofit.Builder()
             .baseUrl("https://jsonplaceholder.typicode.com/")
@@ -45,14 +43,11 @@ class PhotosViewModel : ViewModel() {
             override fun onResponse(call: Call<List<Photos>>, response: Response<List<Photos>>) {
                 photoList!!.value = response.body()
             }
-
         })
 
     }
-
-    fun saveStrings (image : String, title : String){
+    fun saveStrings (image: String, title: String){
         this.image.value = image
         this.title.value = title
     }
-
 }

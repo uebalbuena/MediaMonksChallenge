@@ -1,26 +1,30 @@
 package com.example.mediamonkschallenge.view.adapter
 
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.mediamonkschallenge.R
+import com.example.mediamonkschallenge.databinding.ItemPhotoBinding
 import com.example.mediamonkschallenge.model.Photos
 import com.squareup.picasso.Picasso
 
 class PhotosAdapter (private val list: List<Photos>, private val clickListener: OnPhotosClickListener)
     : RecyclerView.Adapter<PhotosAdapter.PhotoViewHolder>() {
 
+    private lateinit var photoItemBinding: ItemPhotoBinding
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PhotoViewHolder {
-        val inflater = LayoutInflater.from (parent.context)
-        return PhotoViewHolder(inflater, parent)
+        photoItemBinding = ItemPhotoBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+        return PhotoViewHolder(photoItemBinding.root)
     }
 
     override fun getItemCount(): Int = list.size
 
     override fun onBindViewHolder(holder: PhotoViewHolder, position: Int) {
-        var photos : Photos = list [position]
+        val photos : Photos = list [position]
         holder.bind(photos, clickListener)
     }
 
@@ -28,15 +32,13 @@ class PhotosAdapter (private val list: List<Photos>, private val clickListener: 
         fun onPhotoClick(image: String, title: String)
     }
 
-    class PhotoViewHolder(inflater: LayoutInflater, parent: ViewGroup) :
-        RecyclerView.ViewHolder(inflater.inflate(R.layout.item_photo, parent, false)) {
-
-        var title: TextView? = null
-        var image: ImageView? = null
+    inner class PhotoViewHolder(view: View) : RecyclerView.ViewHolder(view) {
+        private var title: TextView? = null
+        private var image: ImageView? = null
 
         init {
-            title = itemView.findViewById(R.id.titlePhoto)
-            image = itemView.findViewById(R.id.imagePhoto)
+            title = photoItemBinding.titlePhoto
+            image = photoItemBinding.imagePhoto
         }
 
         fun bind(photos: Photos, productClickListener: OnPhotosClickListener) {
@@ -54,6 +56,5 @@ class PhotosAdapter (private val list: List<Photos>, private val clickListener: 
                 .placeholder(R.drawable.ic_loading)
                 .into(this)
         }
-
     }
 }

@@ -23,7 +23,7 @@ class AlbumsViewModel : ViewModel() {
         return albumsList as MutableLiveData<List<Albums>>
     }
 
-    fun loadAlbumsList() {
+    private fun loadAlbumsList() {
 
         val retrofit = Retrofit.Builder()
             .baseUrl("https://jsonplaceholder.typicode.com/")
@@ -40,8 +40,6 @@ class AlbumsViewModel : ViewModel() {
             override fun onResponse(call: Call<List<Albums>>, response: Response<List<Albums>>) {
                 albumsList!!.value = response.body()
             }
-
         })
     }
-
 }
